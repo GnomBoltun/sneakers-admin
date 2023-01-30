@@ -17,8 +17,10 @@ export default createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#1867C0',
-          secondary: '#5CBBF6',
+          primary: '#2E9CB5',
+          secondary: '#5AAEB9',
+          surface: '#ffffff',
+          background: '#F5F5F5'
         },
       },
     },
