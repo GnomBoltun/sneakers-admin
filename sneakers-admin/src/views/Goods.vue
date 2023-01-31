@@ -98,9 +98,8 @@
                         <v-select class="mt-4" v-model="value" :items="items" chips label="Сезоны" multiple>
                         </v-select>
 
-                        <p class="text-h6">Добавить изображение*</p>
-                        <v-file-input label="Перетащите изображение сюда" variant="underlined" class="mt-4"
-                            prepend-icon="mdi-camera"></v-file-input>
+                        <p class="text-h6 mb-4">Добавить изображение*</p>
+                        <Dropzone></Dropzone>
 
                         <v-select class="mt-4" v-model="value" :items="items" label="Статус видимости">
                         </v-select>
@@ -254,9 +253,8 @@
                                     <v-select class="mt-4" v-model="value" :items="items" chips label="Сезоны" multiple>
                                     </v-select>
 
-                                    <p class="text-h6">Добавить изображение*</p>
-                                    <v-file-input label="Перетащите изображение сюда" variant="underlined" class="mt-4"
-                                        prepend-icon="mdi-camera"></v-file-input>
+                                    <p class="text-h6 mb-4">Добавить изображение*</p>
+                                    <Dropzone></Dropzone>
 
                                     <v-select class="mt-4" v-model="value" :items="items" label="Статус видимости">
                                     </v-select>
@@ -284,108 +282,101 @@
 </template>
 
 <script>
+import Dropzone from '@/components/Dropzone.vue';
+
 export default {
     data() {
         return {
-            userName: 'Alexey Popov',
-            brands: ['Adidas', 'Nike', 'Puma', 'NB'],
+            userName: "Alexey Popov",
+            brands: ["Adidas", "Nike", "Puma", "NB"],
             brandsValue: [],
-            categories: ['Adida', 'Nie', 'Pua', 'N'],
+            categories: ["Adida", "Nie", "Pua", "N"],
             categoriesValue: [],
-            colors: ['Adids', 'Nke', 'uma', 'N'],
+            colors: ["Adids", "Nke", "uma", "N"],
             colorsValue: [],
-            size: ['Adids', 'ike', 'Pma', 'N'],
+            size: ["Adids", "ike", "Pma", "N"],
             sizeValue: [],
-            status: ['Adidas', 'ike', 'uma', 'NB'],
+            status: ["Adidas", "ike", "uma", "NB"],
             statusValue: [],
-            season: ['Adias', 'Nie', 'Puma', 'N'],
+            season: ["Adias", "Nie", "Puma", "N"],
             seasonValue: [],
-
             goods: [
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
                 {
                     id: 1,
-                    article: 'Nike',
-                    name: 'Adidas',
-                    category: 'Shoes',
-                    brand: 'Adidas',
+                    article: "Nike",
+                    name: "Adidas",
+                    category: "Shoes",
+                    brand: "Adidas",
                     price: 6900,
                     status: 0
-
                 },
-
             ]
-        }
-    }
+        };
+    },
+    components: { Dropzone }
 }
 </script>
 

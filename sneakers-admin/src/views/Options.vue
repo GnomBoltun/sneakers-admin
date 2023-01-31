@@ -18,12 +18,9 @@
                     <v-card-text>
                         <v-text-field label="Наименование*" variant="outlined"></v-text-field>
                         <v-text-field label="Порядок отображения" variant="outlined"></v-text-field>
-                        <p>Добавить изображение</p>
+                        <p class="mb-4">Добавить изображение</p>
 
-
-                        <v-file-input label="Перетащите изображение сюда" variant="underlined" class="mt-4"
-                            prepend-icon="mdi-cloud-upload">
-                        </v-file-input>
+                        <Dropzone></Dropzone>
                     </v-card-text>
                     <v-card-actions class="justify-start">
                         <v-btn variant="outlined" color="primary" @click="isActive.value = false">Сохранить</v-btn>
@@ -116,12 +113,15 @@
 
 
 <script>
+import Dropzone from '@/components/Dropzone.vue';
+
 export default {
     data() {
         return {
             userName: "Alexey Popov",
         };
     },
+    components: { Dropzone }
 }
 </script>
 
