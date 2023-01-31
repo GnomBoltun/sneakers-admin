@@ -36,17 +36,17 @@
                                 <v-card-text>
                                     <p class="text-body-1">Наименование</p>
 
-                                    <v-text-field :value="item.category" label="Наименование" variant="outlined"
+                                    <v-text-field v-model="item.category" label="Наименование" variant="outlined"
                                         class="mt-4"></v-text-field>
 
-                                    <p class="text-body-1">Содержимое</p>
+                                    <p class="text-body-1 mb-4">Содержимое</p>
 
-                                    <CKEditor :editor="editor" v-model="editorData" :config="editorConfig"></CKEditor>
+                                    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" tag-name="textarea" ></ckeditor>
 
                                 </v-card-text>
                                 <v-card-actions class="justify-start">
                                     <v-btn variant="tonal" color="primary" class="ma-4"
-                                        @click="isActive.value = false">Загрузить</v-btn>
+                                        @click="isActive.value = false">Сохранить</v-btn>
                                 </v-card-actions>
                             </v-card>
                         </template>
@@ -63,11 +63,17 @@
 
 <script>
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { component as CKEditor } from '@ckeditor/ckeditor5-vue';
+
 
 export default {
     data() {
         return {
+            editor: ClassicEditor,
+            editorConfig: {
+                // The configuration of the editor.
+                // https://ckeditor.com/docs/ckeditor5/latest/installation/frameworks/vuejs-v3.html
+                
+            },
             categories: [
                 {
                     id: 1,
@@ -223,7 +229,12 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
+.ck-content p {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 .custom-dialog {
     align-self: flex-end;
 }

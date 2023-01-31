@@ -24,7 +24,29 @@
             <tr v-for="item in categories" :key="item.id">
                 <td>{{ item.category }}</td>
                 <td>
-                    <v-btn icon="mdi-pencil" variant="text"></v-btn>
+                    <v-dialog location-strategy="connected" transition="dialog-bottom-transition">
+                        <template v-slot:activator="{ props }">
+                            <v-btn icon="mdi-pencil" variant="text" v-bind="props"></v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                            <v-card class="w-25 h-screen custom-dialog">
+                                <v-toolbar color="primary" title="Редактирование строки">
+                                    <v-btn variant="text" @click="isActive.value = false" icon="mdi-close"></v-btn>
+                                </v-toolbar>
+                                <v-card-text>
+                                    <p class="text-body-1">Наименование</p>
+
+                                    <v-text-field v-model="item.category" label="Наименование" variant="outlined"
+                                        class="mt-4"></v-text-field>
+
+                                </v-card-text>
+                                <v-card-actions class="justify-start">
+                                    <v-btn variant="tonal" color="primary" class="ma-4"
+                                        @click="isActive.value = false">Сохранить</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </template>
+                    </v-dialog>
                     <v-btn icon="mdi-trash-can" variant="text"></v-btn>
                 </td>
             </tr>
@@ -32,6 +54,12 @@
 
     </v-table>
 </template>
+
+<style>
+.custom-dialog {
+    align-self: flex-end;
+}
+</style>
 
 <script>
 export default {
