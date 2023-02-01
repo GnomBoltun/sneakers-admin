@@ -27,7 +27,7 @@
 
             <v-list>
                 <v-list-item>
-                    <v-list-item-title class="cursor-pointer">Выйти <v-icon>mdi-exit-to-app</v-icon></v-list-item-title>
+                    <v-list-item-title @click="Logout" class="cursor-pointer">Выйти <v-icon>mdi-exit-to-app</v-icon></v-list-item-title>
                 </v-list-item>
             </v-list>
         </v-menu>
@@ -112,6 +112,8 @@
 </template>
 
 <script>
+import router from '@/router';
+
 export default {
     data() {
         return {
@@ -187,7 +189,14 @@ export default {
             ]
 
         }
-    }
+    },
+    methods: {
+        Logout() {
+            localStorage.setItem('isAuth', false);
+            setTimeout(500);
+            router.push('/login');
+        }
+    },
 }
 </script>
 

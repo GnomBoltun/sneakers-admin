@@ -14,9 +14,24 @@
 
         </v-card-text>
         <v-card-actions class="justify-center">
-            <v-btn color="primary" variant="tonal" class="text-btn-1 px-9" size="large">
+            <v-btn @click="Login" color="primary" variant="tonal" class="text-btn-1 px-9" size="large">
                 ВОЙТИ
             </v-btn>
         </v-card-actions>
     </v-card>
 </template>
+
+<script>
+import router from '@/router';
+export default {
+    methods: {
+        Login() {
+            localStorage.setItem('isAuth', true);
+            setTimeout(500);
+            router.push('/goods');
+        }
+    },
+
+}
+
+</script>

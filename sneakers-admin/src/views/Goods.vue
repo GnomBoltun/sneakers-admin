@@ -61,38 +61,19 @@
                         </v-select>
 
                         <p class="text-h6">Выберите брэнды</p>
-                        <v-select class="mt-4" v-model="value" :items="items" chips label="Бренды" multiple>
+                        <v-select class="mt-4" v-model="value" :items="items" chips label="Бренды">
                         </v-select>
 
                         <p class="text-h6">Выберите цвета</p>
-                        <v-row>
-                            <v-col>
-                                <v-select class="mt-4" v-model="value" :items="items" label="Цвет">
-                                </v-select>
-                            </v-col>
-                            <v-col>
-                                <v-select class="mt-4" v-model="value" :items="items" label="Цена">
-                                </v-select>
-                            </v-col>
-                            <v-col md="2">
-                                <v-btn icon="mdi-plus" class="mt-5" color="primary"></v-btn>
-                            </v-col>
-                        </v-row>
+
+                        <v-select class="mt-4" v-model="value" :items="items" chips label="Цвета">
+                        </v-select>
+
 
                         <p class="text-h6">Выберите размеры</p>
-                        <v-row>
-                            <v-col>
-                                <v-select class="mt-4" v-model="value" :items="items" label="Размер">
-                                </v-select>
-                            </v-col>
-                            <v-col>
-                                <v-select class="mt-4" v-model="value" :items="items" label="Цена">
-                                </v-select>
-                            </v-col>
-                            <v-col md="2">
-                                <v-btn icon="mdi-plus" class="mt-5" color="primary"></v-btn>
-                            </v-col>
-                        </v-row>
+
+                        <v-select class="mt-4" v-model="value" :items="items" chips label="Размеры">
+                        </v-select>
 
                         <p class="text-h6">Выберите сезоны</p>
                         <v-select class="mt-4" v-model="value" :items="items" chips label="Сезоны" multiple>
@@ -138,7 +119,8 @@
 
             <v-list>
                 <v-list-item>
-                    <v-list-item-title class="cursor-pointer">Выйти <v-icon>mdi-exit-to-app</v-icon></v-list-item-title>
+                    <v-list-item-title @click="Logout" class="cursor-pointer">Выйти
+                        <v-icon>mdi-exit-to-app</v-icon></v-list-item-title>
                 </v-list-item>
             </v-list>
         </v-menu>
@@ -231,34 +213,15 @@
                                     </v-select>
 
                                     <p class="text-h6">Выберите цвета</p>
-                                    <v-row>
-                                        <v-col>
-                                            <v-select class="mt-4" v-model="value" :items="items" label="Цвет">
-                                            </v-select>
-                                        </v-col>
-                                        <v-col>
-                                            <v-select class="mt-4" v-model="value" :items="items" label="Цена">
-                                            </v-select>
-                                        </v-col>
-                                        <v-col md="2">
-                                            <v-btn icon="mdi-plus" class="mt-5" color="primary"></v-btn>
-                                        </v-col>
-                                    </v-row>
+
+                                    <v-select class="mt-4" v-model="value" :items="items" chips label="Цвета">
+                                    </v-select>
+
 
                                     <p class="text-h6">Выберите размеры</p>
-                                    <v-row>
-                                        <v-col>
-                                            <v-select class="mt-4" v-model="value" :items="items" label="Размер">
-                                            </v-select>
-                                        </v-col>
-                                        <v-col>
-                                            <v-select class="mt-4" v-model="value" :items="items" label="Цена">
-                                            </v-select>
-                                        </v-col>
-                                        <v-col md="2">
-                                            <v-btn icon="mdi-plus" class="mt-5" color="primary"></v-btn>
-                                        </v-col>
-                                    </v-row>
+
+                                    <v-select class="mt-4" v-model="value" :items="items" chips label="Размеры">
+                                    </v-select>
 
                                     <p class="text-h6">Выберите сезоны</p>
                                     <v-select class="mt-4" v-model="value" :items="items" chips label="Сезоны" multiple>
@@ -294,6 +257,7 @@
 
 <script>
 import Dropzone from '@/components/Dropzone.vue';
+import router from '@/router';
 
 export default {
     data() {
@@ -386,6 +350,13 @@ export default {
                 },
             ]
         };
+    },
+    methods: {
+        Logout() {
+            localStorage.setItem('isAuth', false);
+            setTimeout(500);
+            router.push('/login');
+        }
     },
     components: { Dropzone }
 }
