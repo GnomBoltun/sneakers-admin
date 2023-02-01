@@ -119,18 +119,29 @@
 
         <v-divider vertical></v-divider>
 
-        <v-btn class="mx-2" icon="mdi-bell-outline">
-
+        <v-btn class="text-none" stacked>
+            <v-badge content="2" color="info">
+                <v-icon>mdi-bell-outline</v-icon>
+            </v-badge>
         </v-btn>
+
 
         <v-divider vertical></v-divider>
         <v-avatar class="pl-3" image="../assets/logo.png"></v-avatar>
         <p class="px-3">
             {{ userName }}
         </p>
-        <v-btn icon="mdi-chevron-down">
+        <v-menu>
+            <template v-slot:activator="{ props }">
+                <v-btn icon="mdi-chevron-down" v-bind="props"></v-btn>
+            </template>
 
-        </v-btn>
+            <v-list>
+                <v-list-item>
+                    <v-list-item-title class="cursor-pointer">Выйти <v-icon>mdi-exit-to-app</v-icon></v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-menu>
     </v-app-bar>
 
     <v-container class="shadow mx-4" fluid>

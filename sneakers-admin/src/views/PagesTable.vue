@@ -231,7 +231,8 @@ export default {
 
 <style>
 .ck-content p {
-    max-height: 400px;
+    max-height: 600px;
+    min-height: 400px;
     overflow-y: auto;
 }
 
