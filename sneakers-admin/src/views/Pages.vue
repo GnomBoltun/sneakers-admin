@@ -36,7 +36,7 @@
             <v-row>
                 <v-col md="1">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
-                        <router-link class="text-decoration-none" to="pages/table">
+                        <router-link class="text-decoration-none" to="/pages/table">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
                                 <div class="text-body-1 text-center pa-4">
                                     Страницы
@@ -47,7 +47,7 @@
                 </v-col>
                 <v-col md="1">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
-                        <router-link class="text-decoration-none" to="pages/strings">
+                        <router-link class="text-decoration-none" to="/pages/strings">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
                                 <div class="text-body-1 text-center pa-4">
                                     Строки

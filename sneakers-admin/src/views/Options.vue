@@ -60,7 +60,7 @@
             <v-row>
                 <v-col md="1">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
-                        <router-link class="text-decoration-none" to="options/categories">
+                        <router-link class="text-decoration-none" to="/options/categories">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
                                 <div class="text-body-1 text-center pa-4">
                                     Категории
@@ -71,7 +71,7 @@
                 </v-col>
                 <v-col md="1">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
-                        <router-link class="text-decoration-none" to="options/brands">
+                        <router-link class="text-decoration-none" to="/options/brands">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
                                 <div class="text-body-1 text-center pa-4">
                                     Бренды
@@ -82,7 +82,7 @@
                 </v-col>
                 <v-col md="1">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
-                        <router-link class="text-decoration-none" to="/colors">
+                        <router-link class="text-decoration-none" to="/options/colors">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
                                 <div class="text-body-1 text-center pa-4">
                                     Цвета
@@ -93,7 +93,7 @@
                 </v-col>
                 <v-col md="1">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
-                        <router-link class="text-decoration-none" to="/size">
+                        <router-link class="text-decoration-none" to="/options/size">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
                                 <div class="text-body-1 text-center pa-4">
                                     Размеры
@@ -104,7 +104,7 @@
                 </v-col>
                 <v-col md="1">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
-                        <router-link class="text-decoration-none" to="/seasons">
+                        <router-link class="text-decoration-none" to="/options/seasons">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
                                 <div class="text-body-1 text-center pa-4">
                                     Сезоны
