@@ -47,6 +47,8 @@
   }
 }
 
+
+
 .dropzone,
 .dropzone * {
   box-sizing: border-box

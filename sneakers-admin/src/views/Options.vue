@@ -58,7 +58,7 @@
     <v-container fluid>
         <v-item-group selected-class="text-primary underline">
             <v-row>
-                <v-col md="1">
+                <v-col xl="1" lg="2">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
                         <router-link class="text-decoration-none" to="/options/categories">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
@@ -69,7 +69,7 @@
                         </router-link>
                     </v-item>
                 </v-col>
-                <v-col md="1">
+                <v-col xl="1" lg="2">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
                         <router-link class="text-decoration-none" to="/options/brands">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
@@ -80,7 +80,7 @@
                         </router-link>
                     </v-item>
                 </v-col>
-                <v-col md="1">
+                <v-col xl="1" lg="2">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
                         <router-link class="text-decoration-none" to="/options/colors">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
@@ -91,7 +91,7 @@
                         </router-link>
                     </v-item>
                 </v-col>
-                <v-col md="1">
+                <v-col xl="1" lg="2">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
                         <router-link class="text-decoration-none" to="/options/size">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
@@ -102,7 +102,7 @@
                         </router-link>
                     </v-item>
                 </v-col>
-                <v-col md="1">
+                <v-col xl="1" lg="2">
                     <v-item v-slot="{ isSelected, selectedClass, toggle }">
                         <router-link class="text-decoration-none" to="/options/seasons">
                             <v-card :class="['d-flex align-center', selectedClass]" @click="toggle">
