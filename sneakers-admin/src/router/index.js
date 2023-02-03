@@ -118,13 +118,13 @@ const router = createRouter({
 })
 
 const isAuth = (to) => {
-  return to.meta.auth === true && localStorage.getItem('isAuth') !== true
+  return localStorage.getItem('isAuth') === true
 }
 
 router.beforeEach((to, from) => {
 
   const auth = isAuth(to);
-  if(!auth && to.name !== 'Login') return '/login/login';
+  if(auth && to.name !== 'Login') return '/login/login';
 
 })
 

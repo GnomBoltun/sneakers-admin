@@ -38,29 +38,7 @@
 
         <v-divider vertical></v-divider>
 
-        <v-btn class="text-none" stacked>
-            <v-badge content="2" color="info">
-                <v-icon>mdi-bell-outline</v-icon>
-            </v-badge>
-        </v-btn>
-
-
-        <v-divider vertical></v-divider>
-        <v-avatar class="pl-3" image="../assets/logo.png"></v-avatar>
-        <p class="px-3">
-            {{ userName }}
-        </p>
-        <v-menu>
-            <template v-slot:activator="{ props }">
-                <v-btn icon="mdi-chevron-down" v-bind="props"></v-btn>
-            </template>
-
-            <v-list>
-                <v-list-item>
-                    <v-list-item-title @click="Logout" class="cursor-pointer">Выйти <v-icon>mdi-exit-to-app</v-icon></v-list-item-title>
-                </v-list-item>
-            </v-list>
-        </v-menu>
+       <AppBarBadge name="Alexey Popov"></AppBarBadge>
     </v-app-bar>
 
     <v-container class="shadow mx-4" fluid>
@@ -199,89 +177,90 @@
 </template>
 
 <script>
+import AppBarBadge from '@/components/AppBarBadge.vue';
 import router from '@/router';
 
 export default {
     data() {
         return {
-            userName: 'Alexey Popov',
-            items: ['Уволен', "Активен"],
+            userName: "Alexey Popov",
+            items: ["Уволен", "Активен"],
             value: [],
             users: [
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Уволен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Уволен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Активен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Активен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Уволен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Уволен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Активен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Активен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Уволен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Уволен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Уволен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Уволен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Уволен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Уволен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Уволен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Уволен"
                 },
                 {
-                    url: '../assets/logo.png',
-                    name: 'Alexey Popov',
-                    phone: '+1234567890',
-                    email: 'sometext@some.com',
-                    status: 'Уволен'
+                    url: "../assets/logo.png",
+                    name: "Alexey Popov",
+                    phone: "+1234567890",
+                    email: "sometext@some.com",
+                    status: "Уволен"
                 },
-
             ]
-        }
+        };
     },
     methods: {
         Logout() {
-            localStorage.setItem('isAuth', false);
+            localStorage.setItem("isAuth", false);
             setTimeout(500);
-            router.push('/login');
+            router.push("/login");
         }
     },
+    components: { AppBarBadge }
 }
 </script>
 

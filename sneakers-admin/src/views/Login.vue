@@ -9,7 +9,7 @@
             <v-text-field label="Пароль*" type="password">
             </v-text-field>
             <v-checkbox color="primary" label="Запомнить меня"></v-checkbox>
-            <router-link class="text-primary text-decoration-none text-body-1" to="/reset">Восстановить
+            <router-link class="text-primary text-decoration-none text-body-1" to="/login/reset">Восстановить
                 пароль</router-link>
 
         </v-card-text>
