@@ -18,12 +18,12 @@
                 >
             </v-text-field>
 
-            <router-link class="text-primary text-decoration-none text-body-1" to="/login">Назад</router-link>
+            <router-link class="text-primary text-decoration-none text-body-1" to="/login/login">Назад</router-link>
 
         </v-card-text>
         <v-card-actions class="justify-center">
             <v-btn color="primary" variant="tonal" class="text-btn-1 px-9" size="large">
-                ВОЙТИ
+                ВОССТАНОВИТЬ
             </v-btn>
         </v-card-actions>
     </v-card>
