@@ -9,7 +9,7 @@
     <v-divider vertical></v-divider>
     <v-avatar class="pl-3" image="../assets/logo.png"></v-avatar>
     <p class="px-3">
-        {{ this.name }}
+        {{ this.userName }}
     </p>
     <v-menu>
         <template v-slot:activator="{ props }">
@@ -40,9 +40,28 @@ export default {
             default: 0,
             required: true,
         }
-
+    },
+    data() {
+        return {
+            userName: null,
+        }
+    },
+    created(){
+        this.getUser()
     },
     methods: {
+        getUser(){
+            this.axios.get('https://hisize.tech/api/user/profile', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') }  })
+                .then((response) => {
+                    this.userName = response.data.name
+                    console.log(response)
+                })
+                .catch((error) => {
+                    localStorage.removeItem('token')
+                    localStorage.removeItem('isAuth')
+                    this.$router.push('/login/login')
+                })
+        },
         Logout() {
             localStorage.setItem('isAuth', false);
             setTimeout(500);
